@@ -3,4 +3,7 @@ setuptools
 gradio
 xgboost
 catboost
+kagglehub
+requests
+dataclasses
 -e .
