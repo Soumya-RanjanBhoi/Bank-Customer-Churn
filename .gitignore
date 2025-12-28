@@ -210,3 +210,4 @@ __marimo__/
 bankchurn/*
 Model/*
 artifacts/*
+catboost_info/*

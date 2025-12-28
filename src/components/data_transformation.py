@@ -3,7 +3,7 @@ import numpy as np
 import os,sys,pickle
 from sklearn.preprocessing import StandardScaler,OrdinalEncoder
 from sklearn.compose import ColumnTransformer
-from src.exception import CustomeException
+from src.exception import CustomException
 from src.logger import logging
 from sklearn.pipeline import Pipeline
 from src.components.data_ingestion import DataIngestion
@@ -34,7 +34,7 @@ class DataTransformation:
             return transformer
             
         except Exception as e:
-            raise CustomeException(e,sys)
+            raise CustomException(e,sys)
         
     def feature_eng(self,df:pd.DataFrame)-> pd.DataFrame:
         try:
@@ -48,7 +48,7 @@ class DataTransformation:
             return df
         
         except Exception as e:
-            raise CustomeException(e,sys)
+            raise CustomException(e,sys)
 
 
         
@@ -98,13 +98,7 @@ class DataTransformation:
 
 
         except Exception as e:
-            raise CustomeException(e,sys)
+            raise CustomException(e,sys)
 
 
-if __name__=="__main__":
-    obj = DataIngestion()
-    train,test=obj.initiate_data_ingestion()
-
-    obj1=DataTransformation()
-    obj1.initiate_data_transformation(train,test)
 

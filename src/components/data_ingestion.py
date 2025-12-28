@@ -1,6 +1,6 @@
 import os,sys
 import requests
-from src.exception import CustomeException
+from src.exception import CustomException
 from src.logger import logging
 import pandas as pd
 import kagglehub
@@ -24,7 +24,7 @@ class DataIngestion:
             self.path=f"{path}/Churn_Modelling.csv"
             return f"file saved in {path}/Churn_Modelling.csv"
         except  Exception as e:
-            raise CustomeException(e,sys)
+            raise CustomException(e,sys)
     
     def initiate_data_ingestion(self):
         logging.info('Entered the data ingestion method or component')
@@ -54,7 +54,7 @@ class DataIngestion:
                 self.ingestion_config.test_data_path
             )
         except Exception as e:
-            raise CustomeException(e,sys)
+            raise CustomException(e,sys)
 
 
 
