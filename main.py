@@ -88,17 +88,17 @@ with gr.Blocks(theme=gr.themes.Soft(), title="Bank Customer Churn Predictor") as
     with gr.Row():
         with gr.Column(scale=1):
             gr.Markdown("### User Profile")
-            credit_score = gr.Number(label="Credit Score", value=600)
-            geography = gr.Dropdown(choices=["France", "Spain", "Germany"], label="Geography", value="France")
-            gender = gr.Dropdown(choices=["Male", "Female"], label="Gender", value="Male")
-            age = gr.Number(label="Age", value=35)
-            estimated_salary = gr.Number(label="Estimated Salary", value=50000)
+            credit_score = gr.Number(label="Credit Score", value=600,placeholder="Credit Score of the User")
+            geography = gr.Dropdown(choices=["France", "Spain", "Germany"], label="Geography", value="France",placeholder="The geographical location of the customer")
+            gender = gr.Dropdown(choices=["Male", "Female"], label="Gender", value="Male",placeholder="Gender of the User")
+            age = gr.Number(label="Age", value=35,placeholder="Age of the User")
+            estimated_salary = gr.Number(label="Estimated Salary", value=50000,placeholder="Estimated salary of the user")
 
         with gr.Column(scale=1):
             gr.Markdown("### Account Details")
-            tenure = gr.Number(label="Tenure (Years)", value=5)
-            balance = gr.Number(label="Balance", value=0)
-            num_products = gr.Number(label="Number of Products", value=2)
+            tenure = gr.Number(label="Tenure (Years)", value=5,placeholder="Years with the bank")
+            balance = gr.Number(label="Balance", value=0,placeholder="Account balance")
+            num_products = gr.Number(label="Number of Products", value=2,placeholder="The number of bank products the customer has.")
             has_cr_card = gr.Radio(choices=["Yes", "No"], label="Has Credit Card?", value="Yes")
             is_active_member = gr.Radio(choices=["Yes", "No"], label="Is Active Member?", value="Yes")
 
